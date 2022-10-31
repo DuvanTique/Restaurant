@@ -1,24 +1,15 @@
-package Igu;
-
-import restaurante.Plato;
-import restaurante.Reserva;
-import restaurante.Restaurante;
+package view;
 
 /**
  *
  * @author Duvan
  */
 public class MenuPrincipal extends javax.swing.JFrame {
-    private Restaurante restaurant;
-    private int actualMenu = -1;
-    private String platos = "";
-    private double precio;
 
-    public MenuPrincipal(Restaurante res) {
-        this.restaurant = res;
+    public MenuPrincipal() {
         initComponents();
     }
-
+   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -243,62 +234,43 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonFamiliarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonFamiliarMouseClicked
-        actualMenu = 0;
-        TextAreaMenu.setText(restaurant.getMenu(0).getNombreMenu() + "\n " + restaurant.listarPlatos(actualMenu));
+
     }//GEN-LAST:event_ButtonFamiliarMouseClicked
 
     private void ButtonCartaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonCartaMouseClicked
-        actualMenu = 1;
-        TextAreaMenu.setText(restaurant.getMenu(1).getNombreMenu()+"\n " + restaurant.listarPlatos(actualMenu));
+
     }//GEN-LAST:event_ButtonCartaMouseClicked
 
     private void ButtonBebidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonBebidasMouseClicked
-        actualMenu = 2;
-        TextAreaMenu.setText(restaurant.getMenu(2).getNombreMenu()+"\n " + restaurant.listarPlatos(actualMenu));
+
     }//GEN-LAST:event_ButtonBebidasMouseClicked
 
     private void ButtonAddDiskMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAddDiskMouseClicked
-        try{
-        Plato p = restaurant.getMenu(actualMenu).getPlato(Integer.parseInt(TextFieldDisk.getText())-1);
-        platos += "   -" + p.getNombre() +" Cantidad: "+TextFieldAmout.getText() + "\n";
-        precio += p.getPrecio()*Integer.parseInt(TextFieldAmout.getText());
-        TextAreaReserva.setText(platos);
-        TextFieldPrice.setText(String.valueOf(precio) +"$");
-        TextFieldDisk.setText("");
-        TextFieldAmout.setText("");
-        }
-        catch (Exception ex) {
-            TextAreaReserva.setText("Valores incorrectos");
-        }
+        
     }//GEN-LAST:event_ButtonAddDiskMouseClicked
 
     private void ButtonReserveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonReserveMouseClicked
-        Reserva r = new Reserva("Juan",platos, precio);
-        restaurant.addReserva(r);
-        TextAreaReserva.setText("");
-        platos = "";
-        precio = 0;
-        TextFieldPrice.setText("");
+
     }//GEN-LAST:event_ButtonReserveMouseClicked
 
     private void ButtonShowReserveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonShowReserveMouseClicked
-        TextAreaMenu.setText(restaurant.listarReservas());
+
     }//GEN-LAST:event_ButtonShowReserveMouseClicked
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ButtonAddDisk;
-    private javax.swing.JButton ButtonBebidas;
-    private javax.swing.JButton ButtonCarta;
-    private javax.swing.JButton ButtonFamiliar;
-    private javax.swing.JButton ButtonReserve;
-    private javax.swing.JButton ButtonShowReserve;
-    private javax.swing.JTextArea TextAreaMenu;
-    private javax.swing.JTextArea TextAreaReserva;
-    private javax.swing.JTextField TextFieldAmout;
-    private javax.swing.JTextField TextFieldDisk;
-    private javax.swing.JTextField TextFieldPrice;
+    public javax.swing.JButton ButtonAddDisk;
+    public javax.swing.JButton ButtonBebidas;
+    public javax.swing.JButton ButtonCarta;
+    public javax.swing.JButton ButtonFamiliar;
+    public javax.swing.JButton ButtonReserve;
+    public javax.swing.JButton ButtonShowReserve;
+    public javax.swing.JTextArea TextAreaMenu;
+    public javax.swing.JTextArea TextAreaReserva;
+    public javax.swing.JTextField TextFieldAmout;
+    public javax.swing.JTextField TextFieldDisk;
+    public javax.swing.JTextField TextFieldPrice;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
