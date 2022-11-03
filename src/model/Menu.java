@@ -6,29 +6,29 @@ import java.util.ArrayList;
  *
  * @author Duvan
  */
-public class Menu {
-    private String nombreMenu;
-    private ArrayList<Plato> platos;
+public class TipoProducto {
+    private String tipoProducto;
+    private ArrayList<Productos> producto;
 
-    public Menu(String nombreMenu) {
-        this.nombreMenu = nombreMenu;
-        this.platos = new ArrayList<Plato>();
+    public TipoProducto(String tipoProducto) {
+        this.tipoProducto = tipoProducto;
+        this.Productos = new ArrayList<Productos>();
     }
 
-    public ArrayList<Plato> getPlatos() {
-        return platos;
+    public ArrayList<Productos> getProductos() {
+        return Productos;
     }
     
-    public boolean addPlato(Plato e) {
-        return platos.add(e);
+    public boolean addPlato(Productos e) {
+        return Productos.add(e);
     }
 
-    public Plato getPlato(int index) {
-        return platos.get(index);
+    public Plato getProductos(int index) {
+        return Productos.get(index);
     }
 
-    public String getNombreMenu() {
-        return nombreMenu;
+    public String getTipoProducto() {
+        return tipoProducto;
     }
     
     
