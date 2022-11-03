@@ -6,12 +6,12 @@ package model;
  */
 public class Reserva {
     private String nombreCliente;
-    private String platos;
+    private String producto;
     private double valor;
 
-    public Reserva(String nombreCliente, String platos, double valor) {
+    public Reserva(String nombreCliente, String producto, double valor) {
         this.nombreCliente = nombreCliente;
-        this.platos = platos;
+        this.producto = producto;
         this.valor = valor;
     }
 
@@ -19,8 +19,8 @@ public class Reserva {
         return nombreCliente;
     }
 
-    public String getPlatos() {
-        return platos;
+    public String getProducto() {
+        return producto;
     }
 
     public double getValor() {
